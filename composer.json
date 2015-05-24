@@ -1,0 +1,24 @@
+{
+    "name": "KonstantinFilin/KsStrUtils",
+    "type": "library",
+    "description": "Utils for string management",
+    "keywords": ["string","utils","filters","validators","filter chain", "validator chain"],
+    "homepage": "https://github.com/KonstantinFilin/KsStrUtils",
+    "license": "GPLv2",
+    "authors": [
+        {
+            "name": "Konstantin Filin",
+            "email": "info@kfilin.ru",
+            "homepage": "kfilin.ru",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "KsStrUtils": "src"
+        }
+    }
+}
