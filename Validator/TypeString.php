@@ -1,8 +1,8 @@
 <?php
 
-namespace Utils\Validator;
+namespace KsStrUtils\Validator;
 
-class TypeString extends \Utils\Validator
+class TypeString extends \KsStrUtils\Validator
 {
     public function check($value)
     {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Utils\Validator;
+namespace KsStrUtils\Validator;
 
-class NotEmpty extends \Utils\Validator
+class NotEmpty extends \KsStrUtils\Validator
 {
     public function check($value)
     {        

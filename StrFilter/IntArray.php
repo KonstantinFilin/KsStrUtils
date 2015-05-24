@@ -1,8 +1,8 @@
 <?php
 
-namespace Utils\StrFilter;
+namespace KsStrUtils\StrFilter;
 
-class IntArray extends \Utils\StrFilter\Int
+class IntArray extends \KsStrUtils\StrFilter\Int
 {
     public function filter($str)
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Utils;
+namespace KsStrUtils;
 
 class ValidatorChain
 {
@@ -13,7 +13,7 @@ class ValidatorChain
         $this->error = array();
     }
     
-    public function addValidator(\Utils\Validator $validator)
+    public function addValidator(\KsStrUtils\Validator $validator)
     {
         $this->chain[] = $validator;
     }
@@ -21,13 +21,13 @@ class ValidatorChain
     public function checkAll($value)
     {
         foreach ($this->chain as $validator) {
-            if ($validator instanceof \Utils\Validator) {
+            if ($validator instanceof \KsStrUtils\Validator) {
                 if (!$validator->check($value)) {
                     $this->error = $validator->getErrorMessage();
                     return false;
                 }
             } else {
-                throw new \DomainException("Object must be instance of \Utils\Validator class");
+                throw new \DomainException("Object must be instance of \KsStrUtils\Validator class");
             }
         }
         

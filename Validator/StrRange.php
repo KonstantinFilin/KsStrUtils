@@ -1,8 +1,8 @@
 <?php
 
-namespace Utils\Validator;
+namespace KsStrUtils\Validator;
 
-class StrRange extends \Utils\Validator
+class StrRange extends \KsStrUtils\Validator
 {
     protected $min;
     protected $max;

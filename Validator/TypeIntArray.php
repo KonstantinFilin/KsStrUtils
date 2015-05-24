@@ -1,6 +1,6 @@
 <?php
 
-namespace Utils\Validator;
+namespace KsStrUtils\Validator;
 
 class TypeIntArray extends TypeInt
 {

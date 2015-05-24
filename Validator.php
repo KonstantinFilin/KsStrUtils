@@ -1,6 +1,6 @@
 <?php
 
-namespace Utils;
+namespace KsStrUtils;
 
 abstract class Validator
 {

@@ -1,13 +1,13 @@
 <?php
 
-namespace Utils;
+namespace KsStrUtils;
 
 class ValidatorChainFabric
 {
     public static function create($str)
     {
         $validatorStrArr = explode("|", $str);
-        $validatorChain = new \Utils\ValidatorChain();
+        $validatorChain = new \KsStrUtils\ValidatorChain();
         
         foreach($validatorStrArr as $validatorStr) {
             $validatorChain->addValidator(self::createValidatorFromStr($validatorStr));
@@ -19,7 +19,7 @@ class ValidatorChainFabric
     /**
      * 
      * @param string $str
-     * @return Utils\Validators Description
+     * @return KsStrUtils\Validators Description
      */
     private static function createValidatorFromStr($str)
     {
@@ -35,7 +35,7 @@ class ValidatorChainFabric
         
         switch ($validatorName) {
             case "required": 
-                return new \Utils\Validator\NotEmpty();
+                return new \KsStrUtils\Validator\NotEmpty();
             case "size":
                 if ( empty($validatorParams[0]) ) {
                     throw new \InvalidArgumentException("Требуется указать наименьшую длину строки");
@@ -45,27 +45,27 @@ class ValidatorChainFabric
                     throw new \InvalidArgumentException("Требуется указать наибольшую длину строки");
                 }
 
-                return new \Utils\Validator\StrRange($validatorParams[0], $validatorParams[1]);
+                return new \KsStrUtils\Validator\StrRange($validatorParams[0], $validatorParams[1]);
             case "in":
                 if ( empty($validatorParams) ) {
                     throw new \InvalidArgumentException("Требуется указать список допустимых значений");
                 }
 
-                return new \Utils\Validator\ValueList($validatorParams);
+                return new \KsStrUtils\Validator\ValueList($validatorParams);
             case "int":
-                return new \Utils\Validator\TypeInt();
+                return new \KsStrUtils\Validator\TypeInt();
             case "string":
-                return new \Utils\Validator\TypeString();
+                return new \KsStrUtils\Validator\TypeString();
             case "array":
-                return new \Utils\Validator\TypeArray();
+                return new \KsStrUtils\Validator\TypeArray();
             case "file":
-                return new \Utils\Validator\TypeUploadedFile();
+                return new \KsStrUtils\Validator\TypeUploadedFile();
             case "file_array":
-                return new \Utils\Validator\TypeUploadedFileList();
+                return new \KsStrUtils\Validator\TypeUploadedFileList();
             case "int_array":
-                return new \Utils\Validator\TypeIntArray();
+                return new \KsStrUtils\Validator\TypeIntArray();
             case "string_array":
-                return new \Utils\Validator\TypeStringArray();
+                return new \KsStrUtils\Validator\TypeStringArray();
             default:
                 throw new \DomainException("Wrong validator name: [" . $validatorName . "]");
         }

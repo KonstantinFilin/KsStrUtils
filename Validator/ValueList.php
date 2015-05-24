@@ -1,8 +1,8 @@
 <?php
 
-namespace Utils\Validator;
+namespace KsStrUtils\Validator;
 
-class ValueList extends \Utils\Validator
+class ValueList extends \KsStrUtils\Validator
 {
     protected $availableValues;
     

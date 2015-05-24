@@ -1,8 +1,8 @@
 <?php
 
-namespace Utils\Validator;
+namespace KsStrUtils\Validator;
 
-class TypeUploadedFileList extends \Utils\Validator\TypeUploadedFile
+class TypeUploadedFileList extends \KsStrUtils\Validator\TypeUploadedFile
 {
     public function check($value)
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Utils;
+namespace KsStrUtils;
 
 class StrFilterChain
 {
@@ -11,7 +11,7 @@ class StrFilterChain
         $this->filterList = [];
     }
 
-    public function addFilter(\Utils\StrFilter $filter)
+    public function addFilter(\KsStrUtils\StrFilter $filter)
     {
         $this->filterList[] = $filter;
     }
@@ -19,10 +19,10 @@ class StrFilterChain
     public function run($str)
     {
         foreach ($this->filterList as $filter) {
-            if ($filter instanceof \Utils\StrFilter) {
+            if ($filter instanceof \KsStrUtils\StrFilter) {
                 $str = $filter->filter($str);
             } else {
-                throw new \DomainException("Filter must be instance of \Utils\StrFilter class");
+                throw new \DomainException("Filter must be instance of \KsStrUtils\StrFilter class");
             }
         }
         

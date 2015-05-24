@@ -1,18 +1,18 @@
 <?php
 
-namespace Utils;
+namespace KsStrUtils;
 
 class StrFilterChainFabric
 {
     /**
      * 
      * @param type $str
-     * @return \Utils\StrFilterChain
+     * @return \KsStrUtils\StrFilterChain
      */
     public static function create($str)
     {
         $filterStrArr = explode("|", $str);
-        $filterChain = new \Utils\StrFilterChain();
+        $filterChain = new \KsStrUtils\StrFilterChain();
         
         foreach($filterStrArr as $filterStr) {
             $filterChain->addFilter(self::createFilterFromStr($filterStr));
@@ -24,7 +24,7 @@ class StrFilterChainFabric
     /**
      * 
      * @param string $str
-     * @return Utils\Validators Description
+     * @return KsStrUtils\Validators Description
      */
     private static function createFilterFromStr($str)
     {
@@ -44,18 +44,18 @@ class StrFilterChainFabric
                     throw new \InvalidArgumentException("Требуется указать параметр для фильтра cut");
                 }
                 
-                return new \Utils\StrFilter\Cut($filterParams[0]);
+                return new \KsStrUtils\StrFilter\Cut($filterParams[0]);
             case "trim":
-                return new \Utils\StrFilter\Trim();
+                return new \KsStrUtils\StrFilter\Trim();
             case "int":
-                return new \Utils\StrFilter\Int();
+                return new \KsStrUtils\StrFilter\Int();
             case "int_array":
-                return new \Utils\StrFilter\IntArray();
+                return new \KsStrUtils\StrFilter\IntArray();
             case "eat":
                 if ( empty($filterParams[0]) ) {
                     throw new \InvalidArgumentException("Требуется указать параметр для фильтра eat");
                 }
-                return new \Utils\StrFilter\StripChar($filterParams[0]);
+                return new \KsStrUtils\StrFilter\StripChar($filterParams[0]);
             default:
                 throw new \DomainException("Wrong filter name: [" . $filterName . "]");
         }

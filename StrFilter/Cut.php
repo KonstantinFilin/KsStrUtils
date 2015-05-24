@@ -1,8 +1,8 @@
 <?php
 
-namespace Utils\StrFilter;
+namespace KsStrUtils\StrFilter;
 
-class Cut extends \Utils\StrFilter
+class Cut extends \KsStrUtils\StrFilter
 {
     protected $max;
     

@@ -1,8 +1,8 @@
 <?php
 
-namespace Utils\StrFilter;
+namespace KsStrUtils\StrFilter;
 
-class StripChar extends \Utils\StrFilter
+class StripChar extends \KsStrUtils\StrFilter
 {
     protected $char;
     
