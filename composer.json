@@ -1,5 +1,5 @@
 {
-    "name": "KonstantinFilin/KsStrUtils",
+    "name": "konstantin-filin/ks-str-utils",
     "type": "library",
     "description": "Utils for string management",
     "keywords": ["string","utils","filters","validators","filter chain", "validator chain"],
