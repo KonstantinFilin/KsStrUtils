@@ -4,7 +4,7 @@
     "description": "Utils for string management",
     "keywords": ["string","utils","filters","validators","filter chain", "validator chain"],
     "homepage": "https://github.com/KonstantinFilin/KsStrUtils",
-    "license": "GPLv2",
+    "license": "AML",
     "authors": [
         {
             "name": "Konstantin Filin",
